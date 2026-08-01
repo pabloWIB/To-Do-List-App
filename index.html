@@ -1,25 +1,104 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="CSS/normalize.css">
-	<link rel="stylesheet" href="CSS/styles.css">
-	<link rel="icon" type="image/x-icon" href="JS-To-Do.png">
-	<title>WIBINWEB</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Built by Pablo Nieto Pérez — wib.digital
+       Need changes or a new build? https://www.fiverr.com/pablonietop -->
+  <meta name="author" content="Pablo Nieto Pérez — wib.digital">
+  <link rel="author" href="https://www.fiverr.com/pablonietop">
+  <title>JS To-Do — lista de tareas que no se borra al recargar</title>
+  <meta name="description" content="Lista de tareas en JavaScript sin dependencias ni frameworks. Añade, marca y borra tareas: se guardan en tu navegador y siguen ahí cuando vuelves. Sin cuenta.">
+  <meta name="theme-color" content="#1c3d59">
+  <link rel="canonical" href="https://jstodo.wib.digital/">
+
+  <meta property="og:title" content="JS To-Do — lista de tareas que no se borra al recargar">
+  <meta property="og:description" content="Lista de tareas en JavaScript sin dependencias ni frameworks. Añade, marca y borra tareas: se guardan en tu navegador y siguen ahí cuando vuelves. Sin cuenta.">
+  <meta property="og:url" content="https://jstodo.wib.digital/">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:image" content="https://jstodo.wib.digital/assets/img/logo/js-to-do.png">
+
+  <link rel="icon" type="image/png" href="assets/img/logo/favicon.png">
+  <link rel="apple-touch-icon" href="assets/img/logo/js-to-do.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;display=swap">
+
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/layout.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+
+  <script src="assets/js/main.js" defer></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Pablo Nieto Pérez",
+    "url": "https://wib.digital",
+    "jobTitle": "Web Designer and Developer",
+    "sameAs": [
+      "https://www.fiverr.com/pablonietop",
+      "https://www.linkedin.com/in/pablo-nieto-perez-39a530292"
+    ]
+  }
+  </script>
 </head>
 <body>
-	<main>
-		<h1>#to-do</h1>
-		<h2>Ingresa tus tareas</h2>
-		<form action="" id="formulario">
-			<input type="text" id="tareas" name="tareas" placeholder="tareas" class="tareas">
-			<input type="submit" id="enviar" name="enviar" value="AGREGAR" class="enviar">
-			<div id="haceres" class="haceres">
-			</div>
-		</form>
-	</main>
-	<script src="JS/function.js">
-	</script>
+  <div class="page">
+    <header class="site-header container">
+      <h1 class="site-header__title">to-do</h1>
+      <p class="site-header__lead">Escribe lo que tienes pendiente. Se guarda en este navegador y sigue aquí cuando vuelvas.</p>
+    </header>
+
+    <main class="main container">
+      <form class="task-form" id="task-form" novalidate>
+        <div class="task-form__row">
+          <div class="field">
+            <label class="field__label" for="task-input">Nueva tarea</label>
+            <input
+              class="field__input"
+              type="text"
+              id="task-input"
+              name="tarea"
+              maxlength="120"
+              autocomplete="off"
+              aria-describedby="task-error">
+          </div>
+          <button class="btn btn--primary" type="submit">Agregar</button>
+        </div>
+        <p class="field__error" id="task-error" role="alert" hidden></p>
+      </form>
+
+      <section class="tasks" aria-labelledby="tasks-title">
+        <div class="tasks__head">
+          <h2 id="tasks-title">Tus tareas</h2>
+          <p class="tasks__count" id="task-count" aria-live="polite"></p>
+        </div>
+
+        <p class="empty-state" id="empty-state">Todavía no hay tareas guardadas. Escribe la primera arriba.</p>
+
+        <ul class="task-list" id="task-list"></ul>
+
+        <button class="btn btn--ghost" type="button" id="clear-done" hidden>Borrar completadas</button>
+      </section>
+    </main>
+
+    <footer class="site-footer container">
+      <div class="site-footer__links">
+        <a class="site-footer__brand" href="https://wib.digital" rel="noopener">
+          <img src="assets/img/logo/wib.png" width="96" height="96" alt="Logotipo de WIB" loading="lazy">
+          <span>wib.digital</span>
+        </a>
+        <a class="site-footer__link" href="https://github.com/pabloWIB/To-Do-List-App" rel="noopener">Código en GitHub</a>
+      </div>
+      <p>Pablo Nieto Pérez. Las tareas nunca salen de tu navegador: no hay servidor ni cuenta de usuario.</p>
+      <p class="site-credit">
+        Built by <a href="https://wib.digital" rel="noopener">wib.digital</a> —
+        <a href="https://www.fiverr.com/pablonietop" rel="noopener">hire me on Fiverr</a>
+      </p>
+    </footer>
+  </div>
 </body>
 </html>

@@ -1,0 +1,271 @@
+/* ==========================================================================
+   components.css — formulario, botones, lista de tareas y avisos
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Botones
+   -------------------------------------------------------------------------- */
+
+.btn {
+  display: inline-flex;
+  gap: var(--space-2);
+  align-items: center;
+  justify-content: center;
+  min-width: var(--tap-target);
+  min-height: var(--tap-target);
+  padding-inline: var(--space-4);
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  font-size: var(--text-base);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition:
+    background-color var(--transition),
+    border-color var(--transition),
+    color var(--transition),
+    transform var(--transition);
+}
+
+.btn--primary {
+  background-color: var(--color-accent-strong);
+  color: var(--color-on-accent);
+  box-shadow: var(--shadow-sm);
+}
+
+.btn--primary:hover {
+  background-color: var(--color-accent-hover);
+}
+
+.btn--primary:active {
+  transform: translateY(1px);
+  box-shadow: none;
+}
+
+.btn--ghost {
+  align-self: flex-start;
+  background-color: transparent;
+  border-color: var(--color-border);
+  color: var(--color-text);
+  font-size: var(--text-sm);
+}
+
+.btn--ghost:hover:not(:disabled) {
+  background-color: var(--color-surface);
+  border-color: var(--color-accent-strong);
+}
+
+.btn--ghost:active:not(:disabled) {
+  transform: translateY(1px);
+}
+
+.btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+/* --------------------------------------------------------------------------
+   2. Formulario
+   -------------------------------------------------------------------------- */
+
+.task-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.task-form__row {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.field {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: var(--space-2);
+  min-width: 0;
+}
+
+.field__label {
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.field__input {
+  width: 100%;
+  min-height: var(--tap-target);
+  padding: var(--space-2) var(--space-3);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font-size: var(--text-lg);
+  transition:
+    border-color var(--transition),
+    background-color var(--transition);
+}
+
+.field__input:hover {
+  border-color: var(--color-accent-strong);
+}
+
+.field__input:focus {
+  background-color: var(--color-surface-hover);
+  border-color: var(--color-accent);
+}
+
+.field__input[aria-invalid="true"] {
+  border-color: var(--color-danger);
+}
+
+.field__error {
+  display: flex;
+  gap: var(--space-2);
+  align-items: flex-start;
+  color: var(--color-danger);
+  font-size: var(--text-sm);
+}
+
+.field__error::before {
+  content: "!";
+  flex: none;
+  width: 1.25em;
+  height: 1.25em;
+  border: 1px solid currentcolor;
+  border-radius: var(--radius-full);
+  font-weight: 700;
+  line-height: 1.15;
+  text-align: center;
+}
+
+/* --------------------------------------------------------------------------
+   3. Lista de tareas
+   -------------------------------------------------------------------------- */
+
+.tasks__count {
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+  font-variant-numeric: tabular-nums;
+}
+
+.task-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin: 0;
+}
+
+.task {
+  display: flex;
+  gap: var(--space-2);
+  align-items: center;
+  padding-inline: var(--space-2);
+  background-color: var(--color-surface);
+  border: 1px solid transparent;
+  border-radius: var(--radius-md);
+  transition:
+    background-color var(--transition),
+    border-color var(--transition);
+}
+
+.task:hover {
+  background-color: var(--color-surface-hover);
+  border-color: var(--color-border);
+}
+
+.task__toggle {
+  display: flex;
+  flex: 1;
+  gap: var(--space-3);
+  align-items: center;
+  min-width: 0;
+  min-height: var(--tap-target);
+  padding-block: var(--space-2);
+  cursor: pointer;
+}
+
+.task__checkbox {
+  flex: none;
+  width: 20px;
+  height: 20px;
+  accent-color: var(--color-accent-strong);
+  cursor: pointer;
+}
+
+.task__text {
+  overflow-wrap: anywhere;
+  transition:
+    color var(--transition),
+    text-decoration-color var(--transition);
+}
+
+.task--done .task__text {
+  color: var(--color-text-muted);
+  text-decoration: line-through;
+  text-decoration-color: var(--color-accent-strong);
+  text-decoration-thickness: 2px;
+}
+
+.task__delete {
+  display: grid;
+  flex: none;
+  place-items: center;
+  width: var(--tap-target);
+  height: var(--tap-target);
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  border-radius: var(--radius-sm);
+  color: var(--color-text-muted);
+  transition:
+    background-color var(--transition),
+    color var(--transition);
+}
+
+.task__delete:hover {
+  background-color: var(--color-bg);
+  color: var(--color-danger);
+}
+
+.task__delete:active {
+  transform: translateY(1px);
+}
+
+.task__delete svg {
+  width: 18px;
+  height: 18px;
+  fill: currentcolor;
+  pointer-events: none;
+}
+
+/* --------------------------------------------------------------------------
+   4. Estado vacío
+   -------------------------------------------------------------------------- */
+
+.empty-state {
+  max-width: none;
+  padding: var(--space-5) var(--space-4);
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius-md);
+  color: var(--color-text-muted);
+  text-align: center;
+}
+
+/* --------------------------------------------------------------------------
+   5. Media queries
+   -------------------------------------------------------------------------- */
+
+@media (min-width: 480px) {
+  .task-form__row {
+    flex-direction: row;
+    align-items: flex-end;
+  }
+
+  .task {
+    padding-inline: var(--space-3);
+  }
+}

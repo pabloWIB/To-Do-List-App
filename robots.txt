@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://jstodo.wib.digital/sitemap.xml
