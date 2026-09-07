@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://jstodo.wib.digital/sitemap.xml
+Sitemap: https://pablowib.github.io/To-Do-List-App/sitemap.xml

@@ -2,7 +2,7 @@
 
 To-do list that survives a page reload, using `localStorage` and no dependencies.
 
-[![Live demo](https://img.shields.io/badge/demo-jstodo.wib.digital-2ea44f)](https://jstodo.wib.digital)
+[![Live demo](https://img.shields.io/badge/demo-pablowib.github.io/To-Do-List-App-2ea44f)](https://pablowib.github.io/To-Do-List-App)
 [![Hire me on Fiverr](https://img.shields.io/badge/Hire%20me%20on-Fiverr-1DBF73?style=for-the-badge&logo=fiverr&logoColor=white)](https://www.fiverr.com/pablonietop)
 ![Dependencies](https://img.shields.io/badge/dependencies-0-brightgreen)
 ![Build step](https://img.shields.io/badge/build%20step-none-lightgrey)
@@ -95,7 +95,7 @@ Because storage is per-origin and per-browser, the list does not follow the user
 
 ## Deployment
 
-Deployed on Vercel at [jstodo.wib.digital](https://jstodo.wib.digital). Static: upload the repository root as-is, no build command and no output directory. `404.html` is picked up automatically for unknown paths. Each visitor's list lives in their own browser.
+Deployed on GitHub Pages at [pablowib.github.io/To-Do-List-App](https://pablowib.github.io/To-Do-List-App). Static: upload the repository root as-is, no build command and no output directory. `404.html` is picked up automatically for unknown paths. Each visitor's list lives in their own browser.
 
 ## Author
 
